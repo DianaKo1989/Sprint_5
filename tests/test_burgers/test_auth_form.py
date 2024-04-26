@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from helpers.locators import (
+from locators import (
     lk_btn, 
     login_btn, 
     enter_lbl,

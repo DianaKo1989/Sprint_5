@@ -1,7 +1,7 @@
 import pytest
 from faker import Faker
 from selenium import webdriver
-from helpers.test_data import url
+from test_data import url
 
 @pytest.fixture(scope='function')
 def wb():

@@ -14,3 +14,7 @@ logo_link = 'header div a'
 incorrecct_pass_msg = "//p[contains(text(), 'Некорректный пароль')]"
 form_input = "//input[@name='name']"
 form_input_pass = "//input[@name='Пароль']"
+
+tab_template = "//*[text()='%s']"
+tab_title_template = "//h2[text()='%s']"
+name_val_tamplate = "//input[@value='%s']"

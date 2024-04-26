@@ -1,12 +1,11 @@
-from time import sleep
 from selenium.webdriver.common.by import By
-from helpers.test_data import (
+from test_data import (
     url, 
     name, 
     email, 
     invalid_pass
 )
-from helpers.locators import (
+from locators import (
     lk_btn, 
     builder_btn, 
     logo_link, 
@@ -17,6 +16,7 @@ from helpers.locators import (
     form_input,
     enter_lbl,
     login_btn,
+    name_val_tamplate
 )
 
 class TestRegistrFlow:
@@ -37,7 +37,6 @@ class TestRegistrFlow:
         inputs[1].send_keys(email)
         wb.find_element(By.XPATH, form_input_pass).send_keys(f'{valid_pass}')
         wb.find_element(By.XPATH, signup_btn).click()
-        sleep(1)
         assert wb.find_element(By.XPATH, enter_lbl), 'Редирект на страницу входа не сработал'
 
     def test_enter(self, wb, fake_user):
@@ -47,8 +46,7 @@ class TestRegistrFlow:
         wb.find_element(By.XPATH, form_input_pass).send_keys(f'{valid_pass}')
         wb.find_element(By.XPATH, login_btn).click()
         wb.find_element(By.XPATH, lk_btn).click()
-        sleep(1)
-        assert wb.find_element(By.XPATH, f"//input[@value='{name}']"), 'Вход не сработал'
+        assert wb.find_element(By.XPATH, name_val_tamplate % name), 'Вход не сработал'
         wb.find_element(By.XPATH, exit_btn).click()
         assert wb.find_element(By.XPATH, enter_lbl), 'Редирект на страницу входа не сработал'
 
