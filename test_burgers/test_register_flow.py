@@ -16,7 +16,8 @@ from locators import (
     form_input,
     enter_lbl,
     login_btn,
-    name_val_tamplate
+    name_val_tamplate,
+    link_title
 )
 
 class TestRegistrFlow:
@@ -52,8 +53,8 @@ class TestRegistrFlow:
 
     def test_constructor_link(self, wb):
         wb.find_element(By.XPATH, builder_btn).click()
-        assert wb.find_element(By.CSS_SELECTOR, 'h1').text == 'Соберите бургер', 'Заголовок главной страницы не совпадает с ожидаемым'
+        assert wb.find_element(By.CSS_SELECTOR, link_title).text == 'Соберите бургер', 'Заголовок главной страницы не совпадает с ожидаемым'
 
     def test_logo_link(self, wb):
         wb.find_element(By.CSS_SELECTOR, logo_link).click()
-        assert wb.find_element(By.CSS_SELECTOR, 'h1').text == 'Соберите бургер', 'Заголовок главной страницы не совпадает с ожидаемым'
+        assert wb.find_element(By.CSS_SELECTOR, link_title).text == 'Соберите бургер', 'Заголовок главной страницы не совпадает с ожидаемым'

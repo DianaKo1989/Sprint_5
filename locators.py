@@ -9,6 +9,7 @@ register_lbl = "//*[text()='Регистрация']"
 signup_btn = "//*[text()='Зарегистрироваться']"
 builder_btn = "//*[text()='Конструктор']"
 logo_link = 'header div a'
+link_title = 'h1'
 
 
 incorrecct_pass_msg = "//p[contains(text(), 'Некорректный пароль')]"
